@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="SPIDER X POPY Store - Car Parking Multiplayer cars, custom builds, coins and more.">
+  <title>SPIDER X POPY Store | CPM Marketplace</title>
+  <style>
+    :root{--bg:#090909;--panel:#151515;--panel2:#1d1d1d;--red:#ef233c;--red2:#a4161a;--text:#f5f5f5;--muted:#aaa;--line:#303030}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none} button{font:inherit}
+    .topbar{background:#111;border-bottom:1px solid var(--line);padding:10px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#ddd;font-size:.88rem}
+    header{position:sticky;top:0;z-index:10;background:rgba(9,9,9,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1180px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{font-weight:900;letter-spacing:1px;font-size:1.15rem}.brand span{color:var(--red)}
+    .navlinks{display:flex;gap:18px;flex-wrap:wrap;font-size:.92rem;color:#ddd}.navlinks a:hover{color:var(--red)}
+    .hero{max-width:1180px;margin:auto;padding:72px 20px 56px;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center}
+    .eyebrow{color:#ff6676;text-transform:uppercase;letter-spacing:3px;font-size:.78rem;font-weight:bold}
+    h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.02;margin:12px 0 18px;font-weight:900}
+    h1 span{color:var(--red)} .hero p{color:var(--muted);max-width:570px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;padding:12px 18px;font-weight:800;cursor:pointer;transition:.2s}
+    .btn-primary{background:var(--red);color:white}.btn-primary:hover{background:#ff4055;transform:translateY(-2px)}
+    .btn-outline{border:1px solid #555;background:transparent;color:white}.btn-outline:hover{border-color:var(--red);color:#ff6676}
+    .hero-art{min-height:300px;border-radius:18px;overflow:hidden;border:1px solid #3a2023;position:relative;background:linear-gradient(135deg,#30090e,#111 65%)}
+    .hero-art img{width:100%;height:100%;min-height:300px;object-fit:cover;opacity:.76;display:block}
+    .hero-label{position:absolute;left:18px;bottom:18px;background:rgba(0,0,0,.78);padding:10px 14px;border-left:4px solid var(--red);font-weight:bold}
+    .notice{max-width:1140px;margin:0 auto 30px;padding:13px 16px;border:1px solid #5c242b;background:#190d0f;color:#ddd;border-radius:10px;font-size:.9rem}
+    section{max-width:1180px;margin:auto;padding:30px 20px 48px;scroll-margin-top:90px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}
+    h2{font-size:1.8rem;margin:0}.section-head p{color:var(--muted);margin:4px 0 0;font-size:.92rem}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:13px;overflow:hidden;transition:.2s}
+    .card:hover{transform:translateY(-4px);border-color:#80303a}
+    .card img{width:100%;height:175px;object-fit:cover;display:block;background:#222}
+    .card-body{padding:16px}.tag{display:inline-block;background:#351016;color:#ff8995;border:1px solid #69232d;padding:3px 8px;border-radius:30px;font-size:.72rem;font-weight:bold}
+    .card h3{margin:10px 0 5px;font-size:1.08rem}.desc{color:var(--muted);font-size:.88rem;min-height:40px}
+    .price-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+    .price{font-size:1.12rem;font-weight:900;color:#fff}.price small{font-size:.72rem;color:var(--muted);font-weight:normal}
+    .order{padding:9px 12px;border-radius:7px;background:var(--red);color:white;font-weight:bold;font-size:.84rem}
+    .order:hover{background:#ff4055}
+    .empty-note{color:var(--muted);font-size:.9rem}
+    .how{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .step{padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+    .step b{color:#ff6676;font-size:1.1rem}.step p{margin-bottom:0;color:var(--muted);font-size:.9rem}
+    footer{border-top:1px solid var(--line);padding:28px 20px;text-align:center;color:var(--muted);font-size:.88rem}
+    footer strong{color:#fff}.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:12px 0}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:48px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nav{align-items:flex-start;flex-direction:column}.navlinks{gap:12px}}
+    @media(max-width:540px){.grid,.how{grid-template-columns:1fr}.card img{height:205px}.section-head{align-items:flex-start;flex-direction:column}.topbar{font-size:.8rem}.hero-art img{min-height:220px}}
+  </style>
+</head>
+<body>
+  <!-- IMPORTANT: Replace 923XXXXXXXXX below with your WhatsApp number in international format.
+       Example for Pakistan: 923001234567 (no +, spaces or dashes). -->
+
+  <div class="topbar">
+    <span>⚡ SPIDER X POPY Store</span>
+    <span>CPM Marketplace · Prices in PKR</span>
+  </div>
+
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#">SPIDER <span>X</span> POPY STORE</a>
+      <div class="navlinks">
+        <a href="#cars">Cars</a><a href="#accounts">Accounts</a><a href="#money">Money</a>
+        <a href="#coins">Coins</a><a href="#custom">Custom Cars</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Your CPM marketplace</div>
+        <h1>DRIVE YOUR<br><span>STYLE.</span></h1>
+        <p>Explore Car Parking Multiplayer cars, custom builds and game-related offers from SPIDER X POPY Store. Browse the listings and contact us on WhatsApp to ask about availability.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#cars">Explore products</a>
+          <a class="btn btn-outline" href="#contact">Contact store</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85" alt="Sports car">
+        <div class="hero-label">BLACK • RED • CPM</div>
+      </div>
+    </div>
+
+    <div class="notice">
+      <strong>Before ordering:</strong> Prices and availability are examples. Confirm the current offer and delivery details with the seller. Never share your password, one-time code, or recovery details. Account transfers may be restricted by the game's rules; check the official terms first.
+    </div>
+
+    <section id="cars">
+      <div class="section-head"><div><h2>🚘 CPM Cars</h2><p>Featured car listings</p></div></div>
+      <div class="grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80" alt="Sports coupe">
+          <div class="card-body"><span class="tag">CAR</span><h3>Sports Car Listing</h3><div class="desc">Add the exact CPM car name and details here.</div>
+            <div class="price-row"><div class="price">Rs. 300 <small>PKR</small></div><a class="order" href="#" onclick="orderProduct('Sports Car Listing','300');return false">Order</a></div></div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80" alt="Red performance car">
+          <div class="card-body"><span class="tag">CAR</span><h3>Premium Car Listing</h3><div class="desc">Add model, upgrades and other included features.</div>
+            <div class="price-row"><div class="price">Rs. 400 <small>PKR</small></div><a class="order" href="#" onclick="orderProduct('Premium Car Listing','400');return false">Order</a></div></div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-150373_payload?auto=format&fit=crop&w=900&q=80" alt="Car listing" onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80'">
+          <div class="card-body"><span class="tag">CAR</span><h3>Special Car Listing</h3><div class="desc">Replace this sample with your own CPM car photo.</div>
+            <div class="price-row"><div class="price">Rs. 250 <small>PKR</small></div><a class="order" href="#" onclick="orderProduct('Special Car Listing','250');return false">Order</a></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="accounts">
+      <div class="section-head"><div><h2>👑 CPM Accounts</h2><p>Account-related listings — check game rules before any transfer</p></div></div>
+      <div class="grid">
+        <article class="card"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80" alt="Gaming setup"><div class="card-body"><span class="tag">ACCOUNT</span><h3>Starter Account Listing</h3><div class="desc">Describe account features without publishing credentials.</div><div class="price-row"><div class="price">Rs. 500 <small>PKR</small></div><a class="order" href="#" onclick="orderProduct('Starter Account Listing','500');return false">Ask details</a></div></div></article>
+        <article class="card"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80" alt="Gaming desk"><div class="card-body"><span class="tag">ACCOUNT</span><h3>Premium Account Listing</h3><div class="desc">Add a safe description of included game progress.</div><div class="price-row"><div class="price">Rs. 900 <small>PKR</small></div><a class="order" href="#" onclick="orderProduct('Premium Account Listing','900');return false">Ask details</a></div></div></article>
+      </div>
+    </section>
+
+    <section id="money">
+      <div class="section-head"><div><h2>💵 Money</h2><p>Game-money service listings</p></div></div>
+      <div class="grid">
+        <article class="card"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80" alt="Money and calculator"><div class="card-body"><span class="tag">MONEY</span><h3>Money Offer</h3><div class="desc">Enter the amount, delivery method and conditions.</div><div class="price-row"><div class="price">Rs. 100 <small>PKR</small></div><a class="order" href="#" onclick="orderProduct('Money Offer','100');return false">Ask details</a></div></div></article>
+      </div>
+    </section>
+
+    <section id="coins">
+      <div class="section-head"><div><h2>🪙 Coins</h2><p>Coin package listings</p></div></div>
+      <div class="grid">
+        <article class="card"><img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&w=900&q=80" alt="Gold coins"><div class="card-body"><span class="tag">COINS</span><h3>Coin Package</h3><div class="desc">Enter the coin quantity and offer details.</div><div class="price-row"><div class="price">Rs. 150 <small>PKR</small></div><a class="order" href="#" onclick="orderProduct('Coin Package','150');return false">Ask details</a></div></div></article>
+      </div>
+    </section>
+
+    <section id="custom">
+      <div class="section-head"><div><h2>🛠️ Custom Cars</h2><p>Custom designs and builds</p></div></div>
+      <div class="grid">
+        <article class="card"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Custom sports car"><div class="card-body"><span class="tag">CUSTOM</span><h3>Custom Car Design</h3><div class="desc">Describe the design, body kit, paint and other options.</div><div class="price-row"><div class="price">Rs. 200 <small>PKR</small></div><a class="order" href="#" onclick="orderProduct('Custom Car Design','200');return false">Ask details</a></div></div></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><h2>How to order</h2><p>Simple steps to contact the store</p></div></div>
+      <div class="how">
+        <div class="step"><b>01 · Choose</b><p>Browse a category and select a listing you like.</p></div>
+        <div class="step"><b>02 · Message</b><p>Tap its WhatsApp button to send the product name and listed price.</p></div>
+        <div class="step"><b>03 · Confirm</b><p>Confirm availability, final price and safe delivery details before paying.</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head"><div><h2>📲 Contact SPIDER X POPY</h2><p>Questions about a listing? Message the store.</p></div></div>
+      <a class="btn btn-primary" id="contactButton" href="#" onclick="contactStore();return false">Chat on WhatsApp</a>
+    </section>
+  </main>
+
+  <footer>
+    <strong>SPIDER X POPY Store</strong>
+    <div class="footer-links"><a href="#cars">Cars</a><a href="#accounts">Accounts</a><a href="#custom">Custom Cars</a><a href="#contact">WhatsApp</a></div>
+    <div>Fan-made marketplace page. Not affiliated with or endorsed by the developers of Car Parking Multiplayer.</div>
+    <div>© <span id="year"></span> SPIDER X POPY Store</div>
+  </footer>
+
+  <script>
+    // Replace this with your WhatsApp number: country code + number, digits only.
+    // Pakistan example format: 923001234567
+    const WHATSAPP_NUMBER = "923XXXXXXXXX";
+
+    function openWhatsApp(message) {
+      if (WHATSAPP_NUMBER.includes("X")) {
+        alert("Please edit index.html and replace WHATSAPP_NUMBER with your WhatsApp number first.");
+        return;
+      }
+      const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function orderProduct(name, price) {
+      openWhatsApp("Hello SPIDER X POPY Store! I am interested in: " + name +
+        ". Listed price: Rs. " + price + " PKR. Is it available?");
+    }
+
+    function contactStore() {
+      openWhatsApp("Hello SPIDER X POPY Store! I would like to ask about your CPM listings.");
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
